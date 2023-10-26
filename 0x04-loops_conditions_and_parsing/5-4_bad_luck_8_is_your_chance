@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script display "bad luck" for the 4th and "good luck" for 8th "Best School" for the other iteration
+
+counter=0
+while (( counter < 10 ))
+do
+	if (( counter == 3 ))
+	then
+		echo "bad luck"
+	elif (( counter == 7 ))
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((counter++))
+done
