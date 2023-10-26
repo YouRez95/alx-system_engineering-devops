@@ -3,5 +3,8 @@
 
 for name in ./*
 do
-	 echo $name | cut -d "-" -f 2
+	if [ -e "$name" ]
+	then
+		echo $name | cut -d "-" -f 2
+	fi
 done
