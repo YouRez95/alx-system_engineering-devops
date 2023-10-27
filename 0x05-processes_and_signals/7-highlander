@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # using trap
 
-trap 'echo "I am invincible!!!"' SITGERM
+trap 'echo "I am invincible!!!"' SIGTERM
 
 while((1))
 do
