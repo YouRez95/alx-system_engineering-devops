@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this scipt display a list of running process
+
+ps f u -A 
