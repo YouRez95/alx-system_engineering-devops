@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Display lines containing bash word
+
+ps f u -A | grep "bash"
+
