@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Resolves IP addresses
+
+resolveip -s localhost
+127.0.0.2
+resolveip -s facebook.com
+8.8.8.8
