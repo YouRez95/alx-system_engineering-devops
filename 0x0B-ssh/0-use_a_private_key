@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# script to connect the server using private key
+
+ssh ubuntu@100.25.163.224 -i ~/.ssh/id_rsa
