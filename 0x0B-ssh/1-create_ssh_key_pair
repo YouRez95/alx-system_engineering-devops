@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Create a pair key bits 4096 file destination school
+
+ssh-keygen -b 4096 -f school -P betty
