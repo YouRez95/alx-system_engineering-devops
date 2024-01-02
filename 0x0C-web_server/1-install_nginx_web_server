@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# install nginx and start the web server
+
+apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.html
+nginx -s reload
+nginx
