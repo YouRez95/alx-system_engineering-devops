@@ -2,7 +2,7 @@ apt-get -y update
 apt -y install haproxy
 mkdir proxy
 string="
-frontend myfrontend
+frontend yourez.tech
   mode http
   timeout client 60s
   bind :80
