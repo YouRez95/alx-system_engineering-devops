@@ -1,0 +1,19 @@
+apt-get -y update
+apt -y install haproxy
+mkdir proxy
+string="
+frontend myfrontend
+  mode http
+  timeout client 60s
+  bind :80
+  default_backend web_servers
+backend web_servers
+  mode http
+  timeout connect 10s
+  timeout server 100s
+  balance roundrobin
+  server myfirstserver  100.25.163.224:80 check
+  server mysecondserver 100.25.212.221:80 check
+"
+echo "$string" > ./proxy/config.cfg
+haproxy -f proxy/config.cfg  
