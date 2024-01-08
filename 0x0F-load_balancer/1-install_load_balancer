@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+# install load balancer
 sudo apt-get -y update
 sudo apt -y install haproxy
 mkdir proxy
