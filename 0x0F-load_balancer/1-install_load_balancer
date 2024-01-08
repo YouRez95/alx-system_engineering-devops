@@ -1,5 +1,5 @@
-apt-get -y update
-apt -y install haproxy
+sudo apt-get -y update
+sudo apt -y install haproxy
 mkdir proxy
 string="
 frontend yourez.tech
