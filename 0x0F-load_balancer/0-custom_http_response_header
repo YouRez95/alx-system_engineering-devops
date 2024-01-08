@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# install nginx and start the web server
+
+apt-get -y update
+apt-get -y install nginx
+string="location / {\n\t\tadd_header X-Served-By \$hostname always;"
+sed -i "s,location / {,$string," /etc/nginx/sites-available/default
+service nginx restart
