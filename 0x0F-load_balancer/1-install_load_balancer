@@ -2,8 +2,7 @@
 # install load balancer
 sudo apt-get -y update
 sudo apt -y install haproxy
-mkdir proxy
-string="
+cat > '/etc/haproxy/haproxy.cfg' << EOF
 frontend yourez.tech
   mode http
   timeout client 60s
@@ -16,6 +15,6 @@ backend web_servers
   balance roundrobin
   server myfirstserver  100.25.163.224:80 check
   server mysecondserver 100.25.212.221:80 check
-"
-echo "$string" > ./proxy/config.cfg
-haproxy -f proxy/config.cfg  
+EOF
+service haproxy reload
+service haproxy restart
