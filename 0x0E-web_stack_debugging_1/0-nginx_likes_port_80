@@ -5,4 +5,5 @@ sudo apt-get -y install nginx
 sudo ufw app list
 sudo ufw allow 'Nginx HTTP'
 sudo ufw status
+sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
 systemctl status nginx
