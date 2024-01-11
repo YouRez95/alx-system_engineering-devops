@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # debugging nginx
-ps aux | grep nginx
+pgrep -f nginx
 lsof -n -i:80
 sudo nginx -t
 sudo nginx -s reload
