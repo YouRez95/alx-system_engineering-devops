@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # debugging nginx
-pgrep -f nginx
-lsof -n -i:80
-sudo nginx -t
-sudo nginx -s reload
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw app list
+sudo ufw allow 'Nginx HTTP'
+sudo ufw status
+systemctl status nginx
