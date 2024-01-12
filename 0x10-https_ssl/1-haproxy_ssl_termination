@@ -1,0 +1,9 @@
+frontend yourez.tech
+        bind *:80
+        bind *:443 ssl crt /etc/haproxy/certs/yourez.tech.pem
+        redirect scheme https code 301 if !{ ssl_fc }
+        default_backend web_servers
+backend web_servers
+        balance roundrobin
+        server 421787-web-01 100.25.163.224
+        server 421787-web-02 100.25.212.221
