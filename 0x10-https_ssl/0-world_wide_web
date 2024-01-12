@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-#
+# display information about subdomains
 
-info(){
-	dig "$1" | grep -A1 'ANSWER SECTION:' | sed -r "s/$1./$2/g" | awk -F" " ' NR==2 {print "The subdomain " $1 " is a " $4 " record and points to " $5}'
+display_info(){
+	dig "$1" | grep -A1 'ANSWER SECTION:' | sed -r "s/$1./$2/g" | awk -F" " ' NR==2 { print "The subdomain " $1 " is a " $4 " record and points to " $5 }'
 }
 
 if (( $# > 1 ))
 then
-	info "$2.$1" "$2"
+	display_info "$2.$1" "$2"
 else
-	info "www.$1" "www"
-	info "lb-01.$1" "lb-01"
-	info "web-01.$1" "web-01"
-	info "web-02.$1" "web-02"
+	display_info "www.$1" "www"
+	display_info "lb-01.$1" "lb-01"
+	display_info "web-01.$1" "web-01"
+	display_info "web-02.$1" "web-02"
 fi
