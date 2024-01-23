@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+#run nginx as nginxuser
+
+sudo chown -R nginx:nginx /var/log/nginx
+sudo chown -R nginx:nginx /var/lib/nginx
+user="user nginx;"
+sed -i "1s/.*/$user/" /etc/nginx/nginx.conf
+sudo systemctl restart nginx
