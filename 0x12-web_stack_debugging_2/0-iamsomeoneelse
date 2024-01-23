@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
-if [ -z "$1" ]
+if [ "$#" -gt 0 ]
 then
-	echo "no argument passed"
-else
 	su -c "$1"
 	whoami
 fi
