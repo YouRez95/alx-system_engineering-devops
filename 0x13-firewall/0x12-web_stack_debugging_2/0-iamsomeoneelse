@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-if [ -z "$1" ]
-then
-	echo "no argument passed"
-else
-	su -c "$1"
-	whoami
-fi
