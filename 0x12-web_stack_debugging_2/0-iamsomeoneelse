@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
 # run the whoami command under another user
-runuser -u "$1" whoami
+# runuser -u "$1" whoami
+sudo -u "$1" whoami
