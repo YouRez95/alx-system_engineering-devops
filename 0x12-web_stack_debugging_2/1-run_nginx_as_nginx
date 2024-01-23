@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #run nginx as nginxuser
 
 sudo chown -R nginx:nginx /var/log/nginx
