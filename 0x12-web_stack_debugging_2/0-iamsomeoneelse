@@ -2,6 +2,6 @@
 
 if [ "$#" -gt 0 ]
 then
-	su -c "$1"
+	su "$1"
 	whoami
 fi
