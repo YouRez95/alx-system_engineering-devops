@@ -27,7 +27,8 @@ def get_data_and_write_to_file_json(userId):
         is_completed = todo.get('completed')
         todo_title = todo.get('title')
         dict_for_data[userId].append(
-            {"task": todo_title, "completed": is_completed, "username": username_of_user})
+            {"task": todo_title, "completed": is_completed,
+             "username": username_of_user})
         name_of_file = "{}.json".format(userId)
         with open(name_of_file, 'w') as f:
             json.dump(dict_for_data, f)
