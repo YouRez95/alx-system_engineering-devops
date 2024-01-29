@@ -27,11 +27,11 @@ def get_data():
         if is_completed is True:
             todos_completed_title.append(todo.get('title'))
             todos_completed = todos_completed + 1
-    print("Emplyee {} is done with tasks({}/{}): ".format(name_of_user,
+    print("Emplyee {} is done with tasks({}/{}):".format(name_of_user,
           todos_completed, todos_to_be_completed))
 
     for task in todos_completed_title:
-        print("\t{}".format(task))
+        print("\t {}".format(task))
 
 
 if __name__ == "__main__":
