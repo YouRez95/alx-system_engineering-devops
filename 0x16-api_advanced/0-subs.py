@@ -9,13 +9,14 @@ def number_of_subscribers(subreddit):
     """
       function that use the request module to send get request
     """
-    if subreddit is None or type(subreddit) is not str:
-        return 0
     r = requests.get('http://www.reddit.com/r/{}/about.json'.format(subreddit),
                      headers={'user-agent': "test"})
 
     if r.status_code != 200:
         return 0
     response = r.json()
-    num_subscribers = response.get('data').get('subscribers')
+    data = response.get('data', 0)
+    if data == 0:
+        return 0
+    num_subscribers = data.get('subscribers', 0)
     return num_subscribers
