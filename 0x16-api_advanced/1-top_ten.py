@@ -9,7 +9,7 @@ def top_ten(subreddit):
     """
       send the get request
     """
-    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot.json?limit=10".format(subreddit)
     response = requests.get(
         url, headers={'User-Agent': 'test'}, allow_redirects=False)
 
