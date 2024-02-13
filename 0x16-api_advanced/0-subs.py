@@ -12,7 +12,7 @@ def number_of_subscribers(subreddit):
     if not subreddit or type(subreddit) is not str:
         return 0
     r = requests.get('http://www.reddit.com/r/{}/about.json'.format(subreddit),
-                     headers={'user-agent': "test"})
+                     headers={'User-Agent': "test"})
     response = r.json()
     if response.get('error') == 404:
         return 0
