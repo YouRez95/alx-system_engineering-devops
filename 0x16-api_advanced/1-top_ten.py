@@ -11,7 +11,7 @@ def top_ten(subreddit):
     """
     url = "https://www.reddit.com/r/{}/hot.json?limit=9".format(subreddit)
     response = requests.get(
-        url, headers={'User-Agent': 'test'}, allow_redirects=False)
+        url, allow_redirects=False, headers={'User-Agent': 'test'})
 
     if response.status_code in range(300, 500):
         print(None)
