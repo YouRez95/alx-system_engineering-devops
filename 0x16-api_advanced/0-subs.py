@@ -9,7 +9,7 @@ def number_of_subscribers(subreddit):
     """
       function that use the request module to send get request
     """
-    r = requests.get('http://www.reddit.com/r/{}/about.json'.format(subreddit),
+    r = requests.get('https://www.reddit.com/r/{}/about.json'.format(subreddit),
                      headers={'user-agent': "test"})
 
     if r.status_code != 200:
