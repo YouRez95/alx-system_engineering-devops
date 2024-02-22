@@ -6,7 +6,7 @@ file { 'modify ULIMIT':
   content => 'ULIMIT="-n 1000000"'
 }
 
-service { 'Nginx':
+service { 'nginx':
   ensure     => running,
   name       => 'nginx',
   subscribe   => File['/etc/default/nginx']
