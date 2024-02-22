@@ -7,7 +7,8 @@ file {'modify ULIMIT':
 }
 
 service { 'nginx':
-  ensure   => running,
-  name     => 'nginx',
-  subscibe => File['/etc/default/nginx']
+  ensure     => running,
+  name       => 'nginx',
+  hasrestart => true,
+  subscibe   => File['/etc/default/nginx']
 }
