@@ -1,14 +1,13 @@
 #fix nginx to serve more requests
 
-file {'modify ULIMIT':
+file { 'modify ULIMIT':
   ensure  => file,
   path    => '/etc/default/nginx',
   content => 'ULIMIT="-n 1000000"'
 }
 
-service { 'nginx':
+service { 'Nginx':
   ensure     => running,
   name       => 'nginx',
-  hasrestart => true,
-  subscibe   => File['/etc/default/nginx']
+  subscribe   => File['/etc/default/nginx']
 }
